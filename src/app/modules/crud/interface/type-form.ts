@@ -1,2 +1,4 @@
-export class TypeForm {
+export enum TypeForm {
+  LOCAL,
+  REMOTE
 }
