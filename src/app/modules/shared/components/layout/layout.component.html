@@ -1,9 +1,8 @@
-
 <mat-toolbar color="primary" class="example-toolbar">
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-    <h1 class="example-app-name"></h1>
+  <h1 class="example-app-name"></h1>
   <span class="example-spacer"></span>
   <button mat-button class="example-icon favorite-icon botones_menu" (click)="changePassword()">
     <mat-icon>lock</mat-icon> <span class="hidden-mobile">Cambiar clave</span>
@@ -15,12 +14,20 @@
 
 <mat-sidenav-container class="example-sidenav-container">
   <mat-sidenav #sidenav="matSidenav">
-    <app-menu></app-menu>
+    <div mat-list-item class="caja-avatar">
+      <div class="mt-2" id="logo">
+        <img class="avatar-sidenav" src="assets/logo-150.png" alt="avatar">
+      </div>
+      <div class="caja-nombre">
+        <p>{{ user.name }}</p>
+      </div>
+    </div>
+    <section>Main</section>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <div style="background-color: white; margin-left: 1vw; margin-right: 1vw;">
-      <router-outlet></router-outlet>
+      <router-outlet *ngIf="true"></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

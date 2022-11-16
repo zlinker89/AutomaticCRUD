@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./modules/prueba/prueba.module').then(m => m.PruebaModule)
   },
+  {
+    path: '**',
+    redirectTo: '', pathMatch: 'full'
+  }
 ]
 
 @NgModule({

@@ -4,7 +4,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-
+// import { LayoutModule } from '@angular/cdk/layout';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     LayoutComponent
@@ -14,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    // LayoutModule,
+    RouterModule,
   ]
 })
 export class SharedModule { }
