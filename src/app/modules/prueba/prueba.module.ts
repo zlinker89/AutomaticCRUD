@@ -5,6 +5,7 @@ import { PruebaRoutingModule } from './prueba-routing.module';
 import { ComponentePruebaComponent } from './pages/componente-prueba/componente-prueba.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { CrudModule } from '../crud/crud.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PruebaRoutingModule,
-    SharedModule
+    SharedModule,
+    CrudModule
   ]
 })
 export class PruebaModule { }
