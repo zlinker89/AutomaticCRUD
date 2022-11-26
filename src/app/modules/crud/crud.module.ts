@@ -5,9 +5,13 @@ import { CrudRoutingModule } from './crud-routing.module';
 import { FormComponent } from './components/form/form.component';
 
 
-import {MatLegacyTableModule as MatTableModule} from '@angular/material/legacy-table';
-import {MatLegacyPaginatorModule as MatPaginatorModule} from '@angular/material/legacy-paginator';
 import { TableMaterialLayoutComponent } from './components/table-material-layout/table-material-layout.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     FormComponent,
@@ -17,7 +21,11 @@ import { TableMaterialLayoutComponent } from './components/table-material-layout
     CommonModule,
     CrudRoutingModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSortModule,
+    MatInputModule
   ],
   exports: [
     TableMaterialLayoutComponent
