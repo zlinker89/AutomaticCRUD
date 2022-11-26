@@ -3,15 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { CrudRoutingModule } from './crud-routing.module';
 import { FormComponent } from './components/form/form.component';
-
-
-import { TableMaterialLayoutComponent } from './components/table-material-layout/table-material-layout.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatInputModule } from '@angular/material/input';
-import { MatSortModule } from '@angular/material/sort';
+import { TableMaterialLayoutComponent } from './components/table-material-layout/table-material-layout.component';
+import { MaterialModule } from '../material/material.module';
+
 @NgModule({
   declarations: [
     FormComponent,
@@ -19,13 +15,10 @@ import { MatSortModule } from '@angular/material/sort';
   ],
   imports: [
     CommonModule,
-    CrudRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
+    MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSortModule,
-    MatInputModule
+    CrudRoutingModule,
   ],
   exports: [
     TableMaterialLayoutComponent
