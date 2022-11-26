@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Injectable, OnInit, ViewChild } from '@angula
 import {MatPaginator, MatPaginatorIntl} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {Subject} from 'rxjs';
+import { ColumnTableMaterialLayout } from '../../interface/table';
 
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
@@ -28,15 +29,30 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
 }
 
 @Component({
-  selector: 'app-table-layout',
-  templateUrl: './table-layout.component.html',
-  styleUrls: ['./table-layout.component.css'],
+  selector: 'app-table-material-layout',
+  templateUrl: './table-material-layout.component.html',
+  styleUrls: ['./table-material-layout.component.css'],
   providers: [{provide: MatPaginatorIntl, useClass: MyCustomPaginatorIntl}],
 })
-
-
-export class TableLayoutComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class TableMaterialLayoutComponent implements OnInit, AfterViewInit {
+  displayedColumns: ColumnTableMaterialLayout[] = [
+    {
+      label: 'position',
+      nameVar: 'position'
+    },
+    {
+      label: 'name',
+      nameVar: 'name'
+    },
+    {
+      label: 'weight',
+      nameVar: 'weight'
+    },
+    {
+      label: 'symbol',
+      nameVar: 'symbol'
+    }
+  ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
@@ -45,6 +61,28 @@ export class TableLayoutComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  /**
+   * COMPUTED METHODS
+   */
+
+  /**
+   * get value from object with custom property
+   * @param obj
+   * @param value
+   * @returns
+   */
+  getValueFromProperty(obj: any, value: string){
+    return obj[value]
+  }
+
+  /**
+   * get all columns
+   * @returns
+   */
+  getColumns(){
+    return this.displayedColumns.map(x => x.nameVar)
   }
 }
 
@@ -77,3 +115,4 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
+

@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { CrudRoutingModule } from './crud-routing.module';
 import { FormComponent } from './components/form/form.component';
-import { TableLayoutComponent } from './components/table-layout/table-layout.component';
 
 
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TableMaterialLayoutComponent } from './components/table-material-layout/table-material-layout.component';
 @NgModule({
   declarations: [
     FormComponent,
-    TableLayoutComponent
+    TableMaterialLayoutComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +20,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatPaginatorModule
   ],
   exports: [
-    TableLayoutComponent
+    TableMaterialLayoutComponent
   ]
 })
 export class CrudModule { }
