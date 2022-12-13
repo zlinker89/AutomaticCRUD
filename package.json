@@ -1,6 +1,6 @@
 {
-  "name": "automatic-crud",
-  "version": "0.0.0",
+  "name": "@frankozx89/automatic-crud",
+  "version": "1.0.01",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.1",
     "@angular/cdk": "^15.0.0",
@@ -39,5 +38,17 @@
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
     "typescript": "~4.8.4"
-  }
+  },
+  "description": "AutomaticCRUD with angular 15 and material angular",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlinker89/AutomaticCRUD.git"
+  },
+  "author": "Frankozx89",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/zlinker89/AutomaticCRUD/issues"
+  },
+  "homepage": "https://github.com/zlinker89/AutomaticCRUD#readme"
 }
